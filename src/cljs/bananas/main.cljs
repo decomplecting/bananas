@@ -6,12 +6,10 @@
 
 (def state (atom 0))
 
-
-
 (defn inc-com []
-  [:div
-   [:h1 @state]
-   [:button {:on-click #(swap! state inc)} "click"]])
+  [:div {:on-click #(swap! state inc)}
+   [:h1 (str "Click" @state)]
+   ])
 
 
 

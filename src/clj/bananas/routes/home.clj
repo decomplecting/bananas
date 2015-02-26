@@ -9,7 +9,10 @@
        (for [x (range 5)]
          [:h3 (str "Hello " x)])]))
 
+(layout/common "foo")
+
   (defroutes app-routes
     (GET "/" [] home)
     (GET "/debug" [] (debug))
     (route/not-found "Not Found"))
+(loop)
