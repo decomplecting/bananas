@@ -1,6 +1,6 @@
 (defproject bananas "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "I'm just a Clojure web app."
+  :url "https://github.com/decomplecting/bananas"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
@@ -9,6 +9,7 @@
                  [reagent "0.5.0-alpha"]
                  [hiccup "1.0.5"]
                  [garden "1.2.5"]
+                 [prone "0.8.0"]
                  [org.clojure/clojurescript "0.0-2913"]]
   :source-paths ["src/clj" "src/cljs"]
   :plugins [[lein-ring "0.8.13"]
@@ -24,4 +25,5 @@
       :output-dir "resources/public/js/out"}}]}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}})
+                        [ring-mock "0.1.5"]]}
+         :ring {:stacktrace-middleware prone.middleware/wrap-exceptions}})
